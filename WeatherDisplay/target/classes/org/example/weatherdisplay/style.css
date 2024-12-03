@@ -1,0 +1,73 @@
+.root {
+    -fx-background-size: cover;
+    -fx-font-size: 11pt;
+    -fx-stroke: white;
+}
+.table-view {
+    -fx-font-size: 14px;
+}
+
+.table-column {
+    -fx-alignment: CENTER;
+}
+
+
+
+/* day-background class */
+.day-background {
+    -fx-background-color: linear-gradient(to bottom, #80cdf5, #7891dc);
+}
+
+ /*night-background class*/
+.night-background {
+    -fx-background-color: linear-gradient(to top, #655986, #878ac3);
+
+}
+#dailyForecastContainer {
+    -fx-padding: 10;
+}
+
+.grid-pane {
+    -fx-grid-lines-visible: true;
+}
+.button:hover{
+    -fx-background-color: #9ca0e5;
+}
+.button {
+    -fx-background-radius: 4; /* Закруглення фону */
+    -fx-border-radius: 4; /* Закруглення кордону */
+    -fx-text-fill: white; /* Колір тексту */
+    -fx-border-width: 2px; /* Товщина кордону */
+    -fx-border-color: #BCF5FD; /* Колір кордону */
+    -fx-background-color: none;
+
+}
+
+.tab-pane{
+    -fx-padding: 10;
+
+}
+.tab{
+    -fx-padding: 5;
+    -fx-background-radius: 4; /* Закруглення фону */
+    -fx-border-radius: 4; /* Закруглення кордону */
+    -fx-border-width: 2px; /* Товщина кордону */
+    -fx-border-color: #BCF5FD; /* Колір кордону */
+    -fx-background-color: none;
+
+}
+.tab:hover{
+    -fx-background-color: #ae96e5;
+}
+.tab *.tab-label {
+    -fx-text-fill: white; /* Задає колір тексту */
+}
+.tab-header-area .tab-header-background{
+    -fx-background-color: none;
+}
+.weather-label {
+    -fx-padding: 20 0 0 0;
+}
+.label{
+    -fx-text-fill: white;
+}

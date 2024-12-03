@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<!--Create a visualization in fxml-->
+<?import java.net.URL?>
+<AnchorPane fx:id="root" xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.weatherdisplay.WeatherController" styleClass="day-background">
+    <BorderPane>
+        <top>
+            <HBox spacing="10" alignment="CENTER">
+                <TextField fx:id="cityTextField" promptText="Enter city" />
+                <Button text="Get Weather" onAction="#onCityEntered" />
+                <Button fx:id="switchUnitButton" text="Switch to Fahrenheit" onAction="#onSwitchUnit" />
+            </HBox>
+        </top>
+        <center>
+            <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE">
+                <Tab fx:id="currentWeatherTab" text="Current Weather">
+                    <VBox spacing="10" alignment="CENTER" styleClass="weather-label">
+                        <Label fx:id="weatherLabel" text="Weather Information will appear here" />
+                        <Label fx:id="temperatureLabel" text="" />
+                        <Label fx:id="windLabel" text="" />
+                        <Label fx:id="humidityLabel" text="" />
+                        <Label fx:id="descriptionLabel" text="" />
+                        <ImageView fx:id="weatherIcon" fitWidth="100" fitHeight="100" />
+                        <Label fx:id="loadingLabel" text="Loading..." visible="false" />
+                        <Label fx:id="errorLabel" text="Error" visible="false" />
+                    </VBox>
+                </Tab>
+                <!-- Tab for 24-hour forecast -->
+                <Tab fx:id="forecastTab" text="24-Hour Forecast">
+                    <VBox fx:id="hourlyForecastContainer" spacing="5" alignment="CENTER" visible="false">
+                        <Label text="Hourly Forecast:" />
+                    </VBox>
+                </Tab>
+                <!-- Tab for Daily forecast -->
+                <Tab fx:id="dailyForecastTab" text="Daily Forecast">
+                    <VBox fx:id="dailyForecastContainer" spacing="5" alignment="CENTER" visible="false">
+                        <Label text="7-Day Forecast:" />
+                    </VBox>
+                </Tab>
+            </TabPane>
+        </center>
+        <bottom>
+            <ImageView fx:id="backgroundImageView" fitWidth="800" fitHeight="600" />
+        </bottom>
+    </BorderPane>
+</AnchorPane>
