@@ -44,21 +44,7 @@ class WeatherControllerTest {
 
         testController.fetchWeather(testCity);
 
-        assertTrue(testController.temperatureLabel.isVisible(), "FXML file not found at the specified location!");
-    }
-
-    @Test
-    void testFetchWeatherLabels() throws Exception {
-        String testCity1 = "Kyiv";
-
-        testController.fetchWeather(testCity1);
-
-        Thread.sleep(5000);
-
-        assertFalse(testController.temperatureLabel.getText().isEmpty(), "Temperature label is empty");
-        assertFalse(testController.windLabel.getText().isEmpty(), "Wind label is empty");
-        assertFalse(testController.humidityLabel.getText().isEmpty(), "Humidity label is empty");
-        assertFalse(testController.descriptionLabel.getText().isEmpty(), "Description label is empty");
+        assertTrue(testController.temperatureLabel.isVisible(), "Error label should be visible when city is invalid");
     }
 
     @Test
@@ -76,6 +62,21 @@ class WeatherControllerTest {
             Object firstChild = testController.hourlyForecastContainer.getChildren().get(0);
             assertTrue(firstChild instanceof GridPane, "The first child should be a GridPane");
         });
+    }
+
+
+    @Test
+    void testFetchWeatherLabels() throws Exception {
+        String testCity1 = "Kyiv";
+
+        testController.fetchWeather(testCity1);
+
+        Thread.sleep(5000);
+
+        assertFalse(testController.temperatureLabel.getText().isEmpty(), "Temperature label is empty");
+        assertFalse(testController.windLabel.getText().isEmpty(), "Wind label is empty");
+        assertFalse(testController.humidityLabel.getText().isEmpty(), "Humidity label is empty");
+        assertFalse(testController.descriptionLabel.getText().isEmpty(), "Description label is empty");
     }
 
     @Test
