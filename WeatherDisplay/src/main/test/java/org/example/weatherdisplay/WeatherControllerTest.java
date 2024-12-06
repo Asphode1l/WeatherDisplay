@@ -3,6 +3,7 @@ package org.example.weatherdisplay;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.application.Platform;
+import javafx.scene.layout.GridPane;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -43,7 +44,7 @@ class WeatherControllerTest {
 
         testController.fetchWeather(testCity);
 
-        assertTrue(testController.temperatureLabel.isVisible(), "Error label should be visible when city is invalid");
+        assertTrue(testController.temperatureLabel.isVisible(), "FXML file not found at the specified location!");
     }
 
     @Test
@@ -58,6 +59,23 @@ class WeatherControllerTest {
         assertFalse(testController.windLabel.getText().isEmpty(), "Wind label is empty");
         assertFalse(testController.humidityLabel.getText().isEmpty(), "Humidity label is empty");
         assertFalse(testController.descriptionLabel.getText().isEmpty(), "Description label is empty");
+    }
+
+    @Test
+    void testHourlyForecastDisplays() throws Exception {
+        String testCity = "Kyiv";
+
+        testController.fetchWeather(testCity);
+
+        // Simulate some delay to allow asynchronous data loading
+        Thread.sleep(10000);
+
+        Platform.runLater(() -> {
+            assertFalse(testController.hourlyForecastContainer.getChildren().isEmpty(), "Hourly forecast grid should have data");
+
+            Object firstChild = testController.hourlyForecastContainer.getChildren().get(0);
+            assertTrue(firstChild instanceof GridPane, "The first child should be a GridPane");
+        });
     }
 
     @Test
