@@ -21,6 +21,8 @@
    javadoc -d docs/api -sourcepath src/main/java -subpackages org.example.weatherdisplay
    ```
 ## Приклад документування класів/методів
+
+```java
 /**
  * Represents a weather data controller that handles the UI logic.
  * It receives data from the weather API and updates the JavaFX controls.
