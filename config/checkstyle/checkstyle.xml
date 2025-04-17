@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+    "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
+    "https://checkstyle.org/dtds/configuration_1_3.dtd">
+
+<module name="Checker">
+
+    <!-- Основні налаштування -->
+    <property name="severity" value="warning"/>
+
+    <!-- Код повинен мати правильну структуру -->
+    <module name="TreeWalker">
+
+        <!-- Іменування -->
+        <module name="TypeName"/>
+        <module name="MethodName"/>
+        <module name="ParameterName"/>
+        <module name="LocalVariableName"/>
+        <module name="MemberName"/>
+
+        <!-- Форматування -->
+        <module name="WhitespaceAround"/>
+        <module name="EmptyBlock"/>
+        <module name="LeftCurly"/>
+        <module name="RightCurly"/>
+        <module name="NeedBraces"/>
+        <module name="Indentation">
+            <property name="basicOffset" value="4"/>
+            <property name="braceAdjustment" value="0"/>
+            <property name="caseIndent" value="4"/>
+        </module>
+
+        <!-- Довжина рядка -->
+        <module name="LineLength">
+            <property name="max" value="120"/>
+        </module>
+
+        <!-- Коментарі -->
+        <module name="JavadocType"/>
+        <module name="JavadocMethod"/>
+        <module name="JavadocVariable"/>
+
+        <!-- Інші правила -->
+        <module name="EmptyLineSeparator"/>
+        <module name="FinalLocalVariable"/>
+        <module name="AvoidStarImport"/>
+        <module name="UnusedImports"/>
+        <module name="EqualsHashCode"/>
+
+    </module>
+
+    <!-- Перевірка package, import -->
+    <module name="FileTabCharacter"/>
+    <module name="NewlineAtEndOfFile"/>
+
+</module>
