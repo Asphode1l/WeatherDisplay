@@ -27,7 +27,7 @@ JavaFX-додаток, який надає актуальну інформаці
 
 1. Клонуйте репозиторій:
    ```sh
-   git clone https://github.com/your-repo/weather-display.git
+   git clone https://github.com/Asphode1l/WeatherDisplay
    ```
 2. Перейдіть у директорію проєкту:
    ```sh
